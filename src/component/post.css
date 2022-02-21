@@ -1,0 +1,122 @@
+.App{
+  width: 100%;
+}
+.Gapp{
+  width:80%;
+  margin: auto;
+}
+.post{
+    display: flex;
+    margin-top: 10px;
+}
+.form-input{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+.input{
+  width: 79%;
+  padding:10px 11px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-color: rgb(202, 202, 204);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.input:focus{
+  border-bottom-color: rgb(144, 144, 243);
+  outline: none;
+}
+.text-area{
+  width: 79%;
+	height: 120px;
+	border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-color: rgb(202, 202, 204);
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn{
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+.text-area:focus{
+  outline: none;
+  border-bottom-color: rgb(144, 144, 243);
+}
+.post-n-body{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-edit-del{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-edit{
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  height: 50px;
+}
+.btn-del{
+  height: 50px;
+  background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.post-title{
+    color: black;
+    text-align: left;
+    width: 250px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family:  'Arial Narrow', Arial, sans-serif;
+}
+.post-body{
+  text-align: left;
+  width: 700px;
+}
+.edit-div{
+  display: flex;
+  height: 150px;
+  border: 1px solid red;
+}
+
+
+.title-input{
+  height: 15px;
+  padding: 5px;
+}
