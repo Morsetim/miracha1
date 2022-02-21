@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 import './../App.css';
 import Post from './getpost';
@@ -9,7 +10,7 @@ const App = () => {
   const [post, setPost] = useState({title:"", body:""});
   const [posts, setPosts] = useState([]);
   const [editMode, setEditMode] = useState(false);
-
+const navigate = useNavigate();
   const handleOnSubmit = (e) => { e.preventDefault(); };
 
   const handleInputChange = e => {
@@ -42,10 +43,8 @@ const resetFormField = () => {
   
   const onAddPost = (e) => {
     e.preventDefault();
-    if(post.title === '' || post.body === ''){
-        return;
-    }
-
+    if(post.title === '' || post.body === '') return;
+    
     if(editMode){
       const newData = posts.map(p => {
         if(p.id === post.id){
@@ -103,7 +102,10 @@ const gray ={
   return (
     <div className="App">
       <form className="form-input" onSubmit={onAddPost}>
+          <div className="first-div">
             <h3>Create Post</h3>
+            <p className='task-two' onClick={()=> navigate('/actors/get-awards')}>Task 2 &#8594;</p>
+          </div>
             <input className='input' type="text" onChange={handleInputChange} placeholder="title" name="title" value={post.title}/>
             <textarea  className='text-area' type="text" onChange={handleInputChange} placeholder="create a post..." name="body"  value={post.body}/>
             <button   style={editMode ? gray : blue }
