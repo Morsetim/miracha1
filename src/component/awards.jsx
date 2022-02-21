@@ -10,11 +10,14 @@ import {
   Legend
 } from "recharts";
 
+// require('dotenv').config();
+
 const chartData = (arr) => {
   const obj = {};
   const a = []
   arr?.map(r => {
     obj[r.year] = obj[r.year] + 1 || 1;
+    return obj;
   });
   
   for (let k in obj) {
@@ -29,11 +32,13 @@ function Chart() {
     axios.get('https://imdb8.p.rapidapi.com/actors/get-awards', {
       params: { nconst: 'nm0001667' },
       headers: {
-        'x-rapidapi-key':'7ec3400586msh15f482ad7dcc60dp1f503fjsn63f3432efa81',
+        'x-rapidapi-key': process.env.REACT_APP_KEY
       }
     }).then(u => setData(chartData(u.data.resource.awards)))
     .catch(e => console.log(e))
   }, [])
+  console.log(process.env.REACT_APP_KEY)
+
   return (
     <div className='chart'>
     <BarChart
