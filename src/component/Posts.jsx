@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import './../App.css';
 import Post from './getpost';
@@ -10,7 +10,9 @@ const App = () => {
   const [post, setPost] = useState({title:"", body:""});
   const [posts, setPosts] = useState([]);
   const [editMode, setEditMode] = useState(false);
-const navigate = useNavigate();
+
+  const navigate = useNavigate();
+
   const handleOnSubmit = (e) => { e.preventDefault(); };
 
   const handleInputChange = e => {
@@ -18,11 +20,10 @@ const navigate = useNavigate();
     setPost((prevState) => ({...prevState, [name]: value }));
   };
  
-
-const resetFormField = () => {
-  setPost((prevState) => ({...prevState, title:"", body:"" }));
-  setEditMode(false)
-}
+  const resetFormField = () => {
+    setPost((prevState) => ({...prevState, title:"", body:"" }));
+    setEditMode(false)
+  }
 
   useEffect(() => {
     const getPost = async () => {
@@ -83,21 +84,21 @@ const resetFormField = () => {
     width: '100px',
     marginBottom: '20px'
 };
-const gray ={
-    backgroundColor: 'gray',
-    border: 'none;',
-    color: 'white',
-    padding: '10px 22px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    display: 'inline-block',
-    fontSize: '16px',
-    margin: '4px 2px',
-    cursor: 'pointer',
-    borderadius: '2px',
-    width: '100px',
-    marginBottom: '20px'
-};
+  const gray ={
+      backgroundColor: 'gray',
+      border: 'none;',
+      color: 'white',
+      padding: '10px 22px',
+      textAlign: 'center',
+      textDecoration: 'none',
+      display: 'inline-block',
+      fontSize: '16px',
+      margin: '4px 2px',
+      cursor: 'pointer',
+      borderadius: '2px',
+      width: '100px',
+      marginBottom: '20px'
+  };
 
   return (
     <div className="App">
